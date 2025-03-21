@@ -115,6 +115,7 @@ main {
 }
 
 .blog__title {
+  cursor: pointer;
   color:var(--clr-nuetral-900);
   font-size: var(--fs-bold);
   font-weight: var(--fw-bold);
