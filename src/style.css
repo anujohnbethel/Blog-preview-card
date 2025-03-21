@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Figtree";
+  font-display: swap;
+  font-weight:500,800;
+  src:url('fonts/Figtree-VariableFont_wght.ttf')
+      format('truetype'),
+      url('fonts/Figtree-Italic-VariableFont_wght.ttf')
+      format('truetype');
+}
+
+:root {
+  --clr-primary-400:hsl(47, 88%, 63%);
+
+  
+
+  --clr-nuetral-900:hsl(0, 0%, 7%);
+  --clr-nuetral-100:hsl(0, 0%, 100%);
+  --clr-nuetral-400:hsl(0, 0%, 42%);
+
+  --ff-primary: "Figtree" , sans-serif;
+
+
+  --fw-regular : 500;
+  --fw-bold:800;
+
+  --fs-semiregular:.9rem;
+  --fs-regular:1rem;
+  --fs-bold:1.35rem;
+  --fs-semibold:1.5rem;
+
+}
+
+
+
+/* utility styles */
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+.flex-group {
+  display: flex;
+  align-items: center;
+  gap:.75rem;
+}
+
+/* general styles */
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-primary-400);
+  color:var(--clr-nuetral-400);
+
+}
+
+main {
+  --max-width:370px;
+  --main-padding:1rem;
+
+  width:min(var(--max-width),(100% - var(--main-padding)*3));
+  margin-inline: auto;
+
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  
+}
+
+/* blog styles */
+
+.blog {
+  --blog-radius:13px;
+  --padding : 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap:.8125rem;
+  /* justify-content: flex-start; */
+  align-items: start;
+  
+  /* width: 100%; */
+  background-color: var(--clr-nuetral-100);
+  border: 1.5px solid var(--clr-nuetral-900);
+  padding:var(--padding);
+  border-radius: calc(var(--blog-radius) * 1.5) ;
+  box-shadow: 9px 10px 0px 0px var(--clr-nuetral-900);
+  overflow: hidden;
+}
+
+
+
+.blog__img{
+  border-radius: var(--blog-radius)
+}
+
+.blog__category {
+
+  font-size: var(--fs-semiregular);
+  font-weight: var(--fw-bold);
+  padding:.2rem .7rem;
+  color:var(--clr-nuetral-900);
+  background-color:var(--clr-primary-400);
+  border-radius: 5px;
+}
+
+.blog__publishing-date {
+  color:var(--clr-nuetral-900);
+  font-size: var(--fs-semiregular);
+  font-weight: var(--fw-regular);
+}
+
+.blog__title {
+  color:var(--clr-nuetral-900);
+  font-size: var(--fs-bold);
+  font-weight: var(--fw-bold);
+}
+
+.blog__title:is(:hover,:focus) {
+  color: var(--clr-primary-400);
+}
+
+.blog__author-img {
+  width: 50px;
+}
+
+.blog__author-name {
+  color:var(--clr-nuetral-900);
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-bold);
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+/* p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+} */
+#root, #__next {
+  isolation: isolate;
+}
